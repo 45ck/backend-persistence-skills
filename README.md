@@ -93,9 +93,9 @@ LICENSE                              MIT
 
 ## Related workflow agents
 
-- [backend-engineer](https://github.com/45ck/workflow-agents) - Own entities, repositories, transactions, and API contracts
-- [test-designer](https://github.com/45ck/workflow-agents) - Design high-value tests around backend behavior
-- [qa-automation-engineer](https://github.com/45ck/workflow-agents) - Translate backend behavior into maintainable automation
+- [backend-engineer](https://github.com/45ck/skill-harness) - Own entities, repositories, transactions, and API contracts
+- [test-designer](https://github.com/45ck/skill-harness) - Design high-value tests around backend behavior
+- [qa-automation-engineer](https://github.com/45ck/skill-harness) - Translate backend behavior into maintainable automation
 
 ## Related skill packs
 
