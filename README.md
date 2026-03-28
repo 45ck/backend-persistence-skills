@@ -91,6 +91,12 @@ uninstall.sh                         global uninstaller
 LICENSE                              MIT
 ```
 
+## Related workflow agents
+
+- [backend-engineer](https://github.com/45ck/workflow-agents) - Own entities, repositories, transactions, and API contracts
+- [test-designer](https://github.com/45ck/workflow-agents) - Design high-value tests around backend behavior
+- [qa-automation-engineer](https://github.com/45ck/workflow-agents) - Translate backend behavior into maintainable automation
+
 ## Related skill packs
 
 - [business-analysis-skills](https://github.com/45ck/business-analysis-skills) - Business analysis techniques, workflows, and quality checks
