@@ -1,0 +1,176 @@
+{
+  "name": "backend-persistence-pack",
+  "version": "0.1.0",
+  "type": "skill-pack",
+  "summary": "Backend and persistence pack for Claude Code-style workflows.",
+  "recommended_order": [
+    "entity-model-designer",
+    "schema-normalizer",
+    "crud-surface-reviewer",
+    "repository-layer-designer",
+    "dao-pattern-builder",
+    "jdbc-vs-jpa-selector",
+    "orm-mapping-reviewer",
+    "transaction-boundary-checker",
+    "query-complexity-reviewer",
+    "index-suggestion-writer",
+    "data-migration-planner",
+    "persistence-test-planner",
+    "api-contract-writer",
+    "api-error-model-designer"
+  ],
+  "skills": [
+    {
+      "id": "entity-model-designer",
+      "path": "skills/entity-model-designer/SKILL.md",
+      "purpose": "Design core backend entities, aggregates, identifiers, relationships, and lifecycle rules so domain data is represented coherently.",
+      "handoffs": [
+        "schema-normalizer",
+        "orm-mapping-reviewer",
+        "api-contract-writer"
+      ]
+    },
+    {
+      "id": "schema-normalizer",
+      "path": "skills/schema-normalizer/SKILL.md",
+      "purpose": "Review a relational schema for redundancy, dependency issues, naming consistency, key design, and normalization tradeoffs.",
+      "handoffs": [
+        "index-suggestion-writer",
+        "data-migration-planner",
+        "repository-layer-designer"
+      ]
+    },
+    {
+      "id": "crud-surface-reviewer",
+      "path": "skills/crud-surface-reviewer/SKILL.md",
+      "purpose": "Review whether the system exposes the right create, read, update, and delete operations without overexposing internals or missing key workflows.",
+      "handoffs": [
+        "api-contract-writer",
+        "repository-layer-designer",
+        "transaction-boundary-checker"
+      ]
+    },
+    {
+      "id": "repository-layer-designer",
+      "path": "skills/repository-layer-designer/SKILL.md",
+      "purpose": "Design repository, DAO, or data access boundaries so persistence logic is centralized, testable, and separated from business rules.",
+      "handoffs": [
+        "dao-pattern-builder",
+        "transaction-boundary-checker",
+        "persistence-test-planner"
+      ]
+    },
+    {
+      "id": "dao-pattern-builder",
+      "path": "skills/dao-pattern-builder/SKILL.md",
+      "purpose": "Define DAO-style access objects, responsibilities, interfaces, and query ownership for systems using explicit data access layers.",
+      "handoffs": [
+        "repository-layer-designer",
+        "jdbc-vs-jpa-selector",
+        "query-complexity-reviewer"
+      ]
+    },
+    {
+      "id": "jdbc-vs-jpa-selector",
+      "path": "skills/jdbc-vs-jpa-selector/SKILL.md",
+      "purpose": "Select between lower-level SQL access and ORM approaches based on control, complexity, performance, portability, and team capability.",
+      "handoffs": [
+        "orm-mapping-reviewer",
+        "dao-pattern-builder",
+        "query-complexity-reviewer"
+      ]
+    },
+    {
+      "id": "orm-mapping-reviewer",
+      "path": "skills/orm-mapping-reviewer/SKILL.md",
+      "purpose": "Review ORM entity mappings, relations, cascades, lazy/eager loading, and persistence assumptions for correctness and maintainability.",
+      "handoffs": [
+        "transaction-boundary-checker",
+        "query-complexity-reviewer",
+        "persistence-test-planner"
+      ]
+    },
+    {
+      "id": "transaction-boundary-checker",
+      "path": "skills/transaction-boundary-checker/SKILL.md",
+      "purpose": "Review transaction scope, consistency boundaries, concurrency assumptions, rollback behavior, and side-effect ordering.",
+      "handoffs": [
+        "persistence-test-planner",
+        "api-contract-writer",
+        "data-migration-planner"
+      ]
+    },
+    {
+      "id": "query-complexity-reviewer",
+      "path": "skills/query-complexity-reviewer/SKILL.md",
+      "purpose": "Review query shape, join depth, filtering, pagination, N+1 risks, and operational complexity before performance problems emerge.",
+      "handoffs": [
+        "index-suggestion-writer",
+        "orm-mapping-reviewer",
+        "transaction-boundary-checker"
+      ]
+    },
+    {
+      "id": "index-suggestion-writer",
+      "path": "skills/index-suggestion-writer/SKILL.md",
+      "purpose": "Suggest indexes, access paths, uniqueness rules, and supporting constraints based on query patterns and data lifecycle.",
+      "handoffs": [
+        "schema-normalizer",
+        "data-migration-planner",
+        "query-complexity-reviewer"
+      ]
+    },
+    {
+      "id": "data-migration-planner",
+      "path": "skills/data-migration-planner/SKILL.md",
+      "purpose": "Plan schema and data migrations with ordering, backfill strategy, rollback posture, compatibility windows, and deployment risks.",
+      "handoffs": [
+        "schema-normalizer",
+        "transaction-boundary-checker",
+        "persistence-test-planner"
+      ]
+    },
+    {
+      "id": "persistence-test-planner",
+      "path": "skills/persistence-test-planner/SKILL.md",
+      "purpose": "Plan tests for repositories, DAOs, migrations, transactions, mapping rules, and database-specific behavior.",
+      "handoffs": [
+        "repository-layer-designer",
+        "transaction-boundary-checker",
+        "api-contract-writer"
+      ]
+    },
+    {
+      "id": "api-contract-writer",
+      "path": "skills/api-contract-writer/SKILL.md",
+      "purpose": "Write backend API contracts covering endpoints or operations, payloads, validation, errors, idempotency, and state transitions.",
+      "handoffs": [
+        "api-error-model-designer",
+        "crud-surface-reviewer",
+        "persistence-test-planner"
+      ]
+    },
+    {
+      "id": "api-error-model-designer",
+      "path": "skills/api-error-model-designer/SKILL.md",
+      "purpose": "Design a consistent backend error model including codes, categories, validation failures, conflict cases, and recovery semantics.",
+      "handoffs": [
+        "api-contract-writer",
+        "crud-surface-reviewer",
+        "transaction-boundary-checker"
+      ]
+    }
+  ],
+  "templates": [
+    "templates/entity-model-template.md",
+    "templates/schema-review-template.md",
+    "templates/crud-surface-template.md",
+    "templates/repository-design-template.md",
+    "templates/orm-mapping-checklist.md",
+    "templates/transaction-boundary-template.md",
+    "templates/query-review-template.md",
+    "templates/data-migration-template.md",
+    "templates/api-contract-template.md",
+    "templates/api-error-model-template.md"
+  ]
+}
